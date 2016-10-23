@@ -9,7 +9,7 @@
   "author": "azu",
   "license": "MIT",
   "dependencies": {
-    "extract-links-mail-magazine": "^1.1.0",
+    "extract-links-mail-magazine": "^1.1.1",
     "get-title": "^1.0.1",
     "hyperquest": "^2.1.0",
     "jsdom": "^9.8.0",
