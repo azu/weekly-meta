@@ -1,0 +1,24 @@
+service: mailing-twitter
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: ${opt:stage, self:custom.defaultStage}
+  region: us-east-1
+  profile: ${self:custom.profiles.${self:provider.stage}}
+custom:
+  defaultStage: dev
+  profiles:
+    dev: serverless
+    prod: serverless
+
+functions:
+  create:
+    handler: handler.send
+    timeout: 10
+    memory: 256
+    events:
+      - http:
+          path: twitter/send
+          method: post
+          cors: true
